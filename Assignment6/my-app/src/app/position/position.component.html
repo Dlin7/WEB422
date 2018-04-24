@@ -1,0 +1,41 @@
+<div class="center">
+  <h2>Position: Position Name</h2>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non odio sed eros tristique bibendum.</p>
+</div>
+<div class="container" *ngIf="this.position">
+  <div class="row">
+    <div class="col-md-12">
+      <form (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label" for="PositionName">Position Name:</label>
+              <input [(ngModel)]="position.PositionName" class="form-control" id="PositionName" type="text" name="PositionName" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label" for="PositionDescription">Description:</label>
+              <textarea [(ngModel)]="position.PositionDescription" class="form-control" id="PositionDescription" rows="5" name="PositionDescription"></textarea>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <a routerLink="/positions" class="btn btn-warning pull-left">Return to Position List</a>
+        <input type="submit" class="btn btn-primary pull-right" value="Update Position" />
+        <br />
+        <br />
+      </form>
+    </div>
+  </div>
+<br />
+<div *ngIf="successMessage" class="alert alert-success">
+  <strong>Success!</strong> Position: "Position Name" was successfully saved.
+</div>
+<div *ngIf="failMessage" class="alert alert-danger">
+  <strong>Error!</strong> Position: "Position Name" could not be saved.
+</div>
+</div>
+<br /><br />
